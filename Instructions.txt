@@ -1,0 +1,27 @@
+Security Policy Commands:
+
+Unblock-File -LiteralPath "C:\Users\Wili.Ciobotea\Downloads\temp\Convert-RptToCsv.ps1"
+
+Or:
+
+$code = Get-Content -Raw "C:\Users\Wili.Ciobotea\Downloads\temp\Convert-RptToCsv.ps1"
+$sb = [scriptblock]::Create($code)
+& $sb -Path "C:\path\to\your\newfile.rpt"
+
+
+
+
+One File:
+
+cd "C:\Users\Wili.Ciobotea\Downloads\temp"
+.\Convert-RptToCsv.ps1 -Path "C:\path\to\your\newfile.rpt"
+
+
+Entire Folder:
+
+.\Convert-RptToCsv.ps1 -Path "C:\path\to\folder" -Recurse
+
+
+Send Output Somewhere Else:
+
+.\Convert-RptToCsv.ps1 -Path "C:\path\to\folder" -OutputFolder "C:\path\to\csv-output" -Recurse
